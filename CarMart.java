@@ -49,7 +49,7 @@ public class CarMart {
     public static void main(String[] args) {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         CarMeta carMeta = CarMeta.getCarMeta();
-        CarService cs = new CarService();
+        CarService cs = new CarService(carMeta);
         int choice = 0;
         do {
             System.out.println("1. Add");
@@ -58,7 +58,7 @@ public class CarMart {
             System.out.println("4. Sold");
             System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
-            choice = Menu.readChoice(5, br);
+            choice = Menu.readChoice(5);
             switch (choice) {
                 case 1:
                     cs.addCar();
@@ -70,7 +70,7 @@ public class CarMart {
                     cs.updateCar();
                     break;
                 case 4:
-                    cs.soldCar();
+                    // cs.soldCar();
                     break;
                 case 5:
                     System.out.println("Exiting...");
